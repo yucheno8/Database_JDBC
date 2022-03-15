@@ -13,7 +13,7 @@ import java.sql.Statement;
 /*
     JDBC快速入门
  */
-public class JdbcDemo01 {
+public class JDBCDemo01 {
     public static void main(String[] args) throws Exception {
         // 1. 导入驱动jar包
         /*
