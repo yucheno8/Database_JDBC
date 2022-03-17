@@ -1,4 +1,4 @@
-package cn.yucheno8.jdbc.Demo02JDBC;
+package cn.yucheno8.jdbc.demo02JDBC;
 
 /**
  * @Author YUCHENO8

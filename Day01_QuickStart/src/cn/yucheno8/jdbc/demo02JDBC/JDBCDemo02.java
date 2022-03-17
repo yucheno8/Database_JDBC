@@ -1,4 +1,4 @@
-package cn.yucheno8.jdbc.Demo02JDBC;
+package cn.yucheno8.jdbc.demo02JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,41 +7,43 @@ import java.sql.Statement;
 
 /**
  * @Author YUCHENO8
- * @Date 2022年03月15日 14:35
+ * @Date 2022年03月15日 14:16
  * @Description
  */
 
 /*
-    account表 修改记录
+    account表 添加一条记录 insert语句
  */
-public class JDBCDemo03 {
+public class JDBCDemo02 {
     public static void main(String[] args) {
-        Connection conn = null;
         Statement stmt = null;
+        Connection conn = null;
         try {
             // 1. 注册驱动
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. 获取连接对象
+            // 2. 定义sql
+            String sql = "insert into account values(null, '王五', 3000)";
+            // 3. 获取Connection对象
             conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");
-            // 3. 定义sql
-            String sql = "update account set balance = 1500 where id = 3";
             // 4. 获取执行sql的对象 Statement
             stmt = conn.createStatement();
             // 5. 执行sql
-            int count = stmt.executeUpdate(sql);
+            int count = stmt.executeUpdate(sql); // 影响的行数
             // 6. 处理结果
             System.out.println(count);
             if (count > 0) {
-                System.out.println("修改成功！");
+                System.out.println("添加成功！");
             } else {
-                System.out.println("修改失败！");
+                System.out.println("添加失败！");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
+            // stmt.close();
             // 7. 释放资源
+            // 为了避免空指针异常
             if (stmt != null) {
                 try {
                     stmt.close();
@@ -52,10 +54,11 @@ public class JDBCDemo03 {
 
             if (conn != null) {
                 try {
-                    conn.close();
+                    stmt.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+
             }
         }
     }

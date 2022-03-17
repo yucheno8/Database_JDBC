@@ -1,4 +1,4 @@
-package cn.yucheno8.jdbc.Demo02JDBC;
+package cn.yucheno8.jdbc.demo02JDBC;
 
 import cn.yucheno8.jdbc.domain.Emp;
 import cn.yucheno8.jdbc.util.JDBCUtils;

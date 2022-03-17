@@ -1,4 +1,4 @@
-package cn.yucheno8.jdbc.Demo02JDBC;
+package cn.yucheno8.jdbc.demo02JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,14 +7,14 @@ import java.sql.Statement;
 
 /**
  * @Author YUCHENO8
- * @Date 2022年03月15日 14:47
+ * @Date 2022年03月15日 14:44
  * @Description
  */
 
 /*
-    执行DDL语句
+    account表 删除一条记录
  */
-public class JDBCDemo05 {
+public class JDBCDemo04 {
     public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;
@@ -24,14 +24,18 @@ public class JDBCDemo05 {
             // 2. 获取连接对象
             conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");
             // 3. 定义sql
-            String sql = "create table student (id int, name varchar(20))";
+            String sql = "delete from account where id = 3";
             // 4. 获取执行sql的对象 Statement
             stmt = conn.createStatement();
             // 5. 执行sql
             int count = stmt.executeUpdate(sql);
             // 6. 处理结果
             System.out.println(count);
-
+            if (count > 0) {
+                System.out.println("删除成功！");
+            } else {
+                System.out.println("删除失败！");
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

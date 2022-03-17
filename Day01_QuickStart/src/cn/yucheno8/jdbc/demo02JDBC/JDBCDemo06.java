@@ -1,4 +1,4 @@
-package cn.yucheno8.jdbc.Demo02JDBC;
+package cn.yucheno8.jdbc.demo02JDBC;
 
 import java.sql.*;
 
@@ -11,7 +11,7 @@ import java.sql.*;
 /*
     执行DDL语句
  */
-public class JDBCDemo07 {
+public class JDBCDemo06 {
     public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;
@@ -29,36 +29,20 @@ public class JDBCDemo07 {
             rs = stmt.executeQuery(sql);
             // 6. 处理结果
             // 6.1 让游标向下移动一行
-            if (rs.next()) {
-                // 判断是否有数据
-                // 6.2 获取数据
-                int id = rs.getInt(1);
-                String name = rs.getString("name");
-                double balance = rs.getDouble(3);
-                System.out.println(id + "---" + name + "---" + balance);
+            rs.next();
+            // 6.2 获取数据
+            int id = rs.getInt(1);
+            String name = rs.getString("name");
+            double balance = rs.getDouble(3);
+            System.out.println(id + "---" + name + "---" + balance);
 
-            }
-
-            while (rs.next()) {
-                // 循环判断游标是否是最后一行末尾
-                // 6.2 获取数据
-                int id = rs.getInt(1);
-                String name = rs.getString("name");
-                double balance = rs.getDouble(3);
-                System.out.println(id + "---" + name + "---" + balance);
-            }
-
-            /*if (rs.next()) {
-                // 判断是否有数据
-                // 6.2 获取数据
-                int id = rs.getInt(1);
-                String name = rs.getString("name");
-                double balance = rs.getDouble(3);
-                System.out.println(id + "---" + name + "---" + balance);
-            }*/
-
-
-
+            // 6.1 让游标向下移动一行
+            rs.next();
+            // 6.2 获取数据
+            int id2 = rs.getInt(1);
+            String name2 = rs.getString("name");
+            double balance2 = rs.getDouble(3);
+            System.out.println(id2+ "---" + name2 + "---" + balance2);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
