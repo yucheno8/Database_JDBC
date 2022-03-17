@@ -158,7 +158,7 @@
 
 ## Spring JDBC
 	* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
-	* 步骤：
+	* 步骤: 
 		1. 导入jar包
 		2. 创建JdbcTemplate对象。依赖于数据源DataSource
 			* JdbcTemplate template = new JdbcTemplate(ds);
