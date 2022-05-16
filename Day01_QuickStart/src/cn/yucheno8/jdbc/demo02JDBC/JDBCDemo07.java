@@ -29,15 +29,14 @@ public class JDBCDemo07 {
             rs = stmt.executeQuery(sql);
             // 6. 处理结果
             // 6.1 让游标向下移动一行
-            if (rs.next()) {
+            /*if (rs.next()) {
                 // 判断是否有数据
                 // 6.2 获取数据
                 int id = rs.getInt(1);
                 String name = rs.getString("name");
                 double balance = rs.getDouble(3);
                 System.out.println(id + "---" + name + "---" + balance);
-
-            }
+            }*/
 
             while (rs.next()) {
                 // 循环判断游标是否是最后一行末尾

@@ -23,8 +23,9 @@ public class JDBCDemo01 {
         // 2. 注册驱动（注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。）
         Class.forName("com.mysql.jdbc.Driver");
         // 3. 获取数据库连接对象
-        //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db3", "root", "root");        // 4. 定义sql语句
-        Connection conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");        // 4. 定义sql语句
+        //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db3", "root", "root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");
+        // 4. 定义sql语句
         //String sql = "update account set balance = 1000 where id = 1";
         String sql = "update account set balance = 2000";
         // 5. 获取执行sql的对象

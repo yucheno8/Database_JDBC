@@ -28,7 +28,7 @@ public class JDBCDemo06 {
             // 5. 执行sql
             rs = stmt.executeQuery(sql);
             // 6. 处理结果
-            // 6.1 让游标向下移动一行
+            // 6.1 让游标向下移动一行（默认在第一行数据上边）
             rs.next();
             // 6.2 获取数据
             int id = rs.getInt(1);

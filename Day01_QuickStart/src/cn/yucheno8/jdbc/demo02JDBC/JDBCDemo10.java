@@ -58,7 +58,7 @@ public class JDBCDemo10 {
             e.printStackTrace();
         } finally {
             JDBCUtils.close(pstmt1, conn);
-            JDBCUtils.close(pstmt1, null);
+            JDBCUtils.close(pstmt2, null);
         }
     }
 }

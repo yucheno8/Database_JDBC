@@ -34,7 +34,7 @@ public class JDBCDemo08 {
         ResultSet rs = null;
         List<Emp> list = null;
         try {
-            // 1. 注册驱动
+            // 1. 注册驱动（可以省略，但建议写上）
             Class.forName("com.mysql.jdbc.Driver");
             // 2. 获取连接
             conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");

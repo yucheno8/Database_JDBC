@@ -137,7 +137,7 @@
 			* getXxx(参数):获取数据
 				* Xxx：代表数据类型   如： int getInt() ,	String getString()
 				* 参数：
-					1. int：代表列的编号,从1开始   如： getString(1)
+					1. int：代表列的编号，从1开始   如： getString(1)
 					2. String：代表列名称。 如： getDouble("balance")
 			
 			* 注意：
@@ -153,7 +153,6 @@
 		                int id = rs.getInt(1);
 		                String name = rs.getString("name");
 		                double balance = rs.getDouble(3);
-		
 		                System.out.println(id + "---" + name + "---" + balance);
 		            }
 
@@ -175,9 +174,9 @@
 				2. 注册驱动
 				3. 获取数据库连接对象 Connection
 				4. 定义sql
-					* 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;
+					* 注意：sql的参数使用?作为占位符。 如：select * from user where username = ? and password = ?;
 				5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) 
-				6. 给？赋值：
+				6. 给?赋值：
 					* 方法： setXxx(参数1,参数2)
 						* 参数1：？的位置编号 从1 开始
 						* 参数2：？的值
