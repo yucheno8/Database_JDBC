@@ -26,10 +26,10 @@ public class DruidDemo2 {
             String sql = "insert into account values(null, ?, ?)";
             // 3. 获取pstmt对象
             pstmt = conn.prepareStatement(sql);
-            // 4. 给？赋值
+            // 4. 给?赋值
             pstmt.setString(1, "王五");
             pstmt.setDouble(2, 3000);
-            // 4. 执行sql
+            // 5. 执行sql
             int count = pstmt.executeUpdate();
             System.out.println(count);
         } catch (SQLException e) {

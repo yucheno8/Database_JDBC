@@ -30,7 +30,7 @@ public class C3p0Demo02 {
     public static void testNamedConfig() throws SQLException {
         // 1.1 获取DataSource，使用指定名称的配置
         DataSource ds = new ComboPooledDataSource("otherc3p0");
-        // 获取连接
+        // 2. 获取连接
         for (int i = 1; i <= 10; i++) {
             Connection conn = ds.getConnection();
             System.out.println(i + ":" + conn);

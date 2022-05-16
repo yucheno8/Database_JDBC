@@ -61,8 +61,8 @@ public class JdbcTemplateDemo02 {
      */
     @Test
     public void test4() {
-        String sql = "select * from emp where id = ? or id = ?";
-        Map<String, Object> map = template.queryForMap(sql, 1001, 1002);
+        String sql = "select * from emp where id = ? /*or id = ?*/";
+        Map<String, Object> map = template.queryForMap(sql, 1001/*, 1002*/);
         System.out.println(map);
         // {id=1001, ename=孙悟空, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}
     }
